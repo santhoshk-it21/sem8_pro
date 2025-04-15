@@ -1,0 +1,345 @@
+/* OrderDetails.css */
+
+/* General page styling */
+.order-details-page {
+  padding: 80px 40px 40px 40px;
+  margin-left: 250px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  display: flex;
+  justify-content: center;
+  transition: margin-left 0.3s ease;
+}
+
+/* Container styling */
+.order-details-container {
+  max-width: 700px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Back button */
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: #e9ecef;
+  color: #086e58;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  background: #e4d697;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.order-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.order-details-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Download button */
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #74c7d5, #56b4d3);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(86, 180, 211, 0.2);
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #56b4d3, #4298b5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(86, 180, 211, 0.3);
+}
+
+/* Details card */
+.details-card {
+  background: #ecdbdb;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.details-card h4 {
+  font-size: 18px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.details-info p {
+  margin: 12px 0;
+  color: #343a40;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-info p strong {
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.status-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.status-btn.pending {
+  background: linear-gradient(135deg, #ffd43b, #ffaa00);
+}
+
+.status-btn.shipped {
+  background: linear-gradient(135deg, #4dabf7, #339af0);
+}
+
+.status-btn.delivered {
+  background: linear-gradient(135deg, #40c057, #2f9e44);
+}
+
+.status-btn.return {
+  background: linear-gradient(135deg, #ff6b6b, #f03e3e);
+}
+
+.status-btn:hover:not(.active):not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.status-btn.pending:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ffaa00, #e69100);
+}
+
+.status-btn.shipped:hover:not(:disabled) {
+  background: linear-gradient(135deg, #339af0, #228be6);
+}
+
+.status-btn.delivered:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2f9e44, #228b22);
+}
+
+.status-btn.return:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f03e3e, #d32f2f);
+}
+
+.status-btn.active {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status-btn:disabled {
+  background: #e9ecef;
+  color: #adb5bd;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Tracking timeline */
+.tracking-timeline {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  position: relative;
+}
+
+.tracking-timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  transform: translateY(-50%);
+  z-index: 0;
+  border-radius: 2px;
+  background: linear-gradient(to right, #fffefa, #4dabf7, #40c057);
+}
+
+.tracking-timeline.returnable::before {
+  background: linear-gradient(to right, #ffd43b, #4dabf7, #40c057, #ff6b6b);
+}
+
+.tracking-timeline.non-returnable::before {
+  background: linear-gradient(to right, #ffd43b, #4dabf7, #40c057);
+}
+
+.tracking-timeline.rejected::before {
+  background-color: #dc3545;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #6c757d;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
+  width: calc(100% / var(--step-count, 3));
+  text-align: center;
+}
+
+.tracking-timeline.returnable {
+  --step-count: 4;
+}
+
+.tracking-timeline.non-returnable {
+  --step-count: 3;
+}
+
+.timeline-icon {
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  background: #fff;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-icon.pending {
+  color: #ffaa00;
+}
+
+.timeline-icon.shipped {
+  color: #339af0;
+}
+
+.timeline-icon.delivered {
+  color: #2f9e44;
+}
+
+.timeline-icon.return {
+  color: #f03e3e;
+}
+
+.timeline-icon.rejected {
+  color: #ff0000;
+}
+
+.timeline-step.active .timeline-icon {
+  transform: scale(1.2);
+}
+
+.timeline-step.completed .timeline-icon {
+  color: #40c057;
+  background-color: currentColor;
+  color: #ffffff;
+}
+
+.timeline-step span {
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .order-details-page {
+    padding: 70px 30px 30px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-details-page {
+    padding: 70px 20px 20px 20px;
+    margin-left: 0;
+  }
+
+  .details-card {
+    padding: 20px;
+  }
+
+  .status-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .timeline-step {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-details-title {
+    font-size: 1.8rem;
+  }
+
+  .details-info p {
+    font-size: 0.9rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .status-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  .timeline-icon {
+    font-size: 1.6rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

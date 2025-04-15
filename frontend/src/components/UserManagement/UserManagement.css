@@ -1,0 +1,235 @@
+.user-management {
+  padding: 80px 40px 40px 40px;
+  margin-left: 250px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+  transition: margin-left 0.3s ease;
+}
+
+.user-management-header {
+  max-width: 1300px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
+
+.user-management-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.error-message {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  background: #ffe6e6;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-table {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.user-table th,
+.user-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #dfe6e9;
+}
+
+.user-table th {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.user-table td {
+  color: #636e72;
+  font-size: 0.95rem;
+}
+
+
+.status-active {
+  color: #00b894;
+  font-weight: 600;
+}
+
+.status-blocked {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.delete-btn,
+.block-btn,
+.unblock-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #e84393, #c0392b);
+  color: white;
+}
+
+.block-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.unblock-btn {
+  background: linear-gradient(135deg, #00b894, #27ae60);
+  color: white;
+}
+
+.delete-btn:hover:not(:disabled),
+.block-btn:hover:not(:disabled),
+.unblock-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.delete-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
+}
+
+.block-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
+}
+
+.unblock-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #27ae60, #219653);
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.5);
+}
+
+.delete-btn:disabled,
+.block-btn:disabled,
+.unblock-btn:disabled {
+  background: #dfe6e9;
+  color: #95a5a6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.no-users {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .user-management {
+    padding: 70px 30px 30px 30px;
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-management {
+    padding: 70px 20px 20px 20px;
+    margin-left: 0;
+  }
+
+  .user-table {
+    font-size: 0.9rem;
+  }
+
+  .delete-btn,
+  .block-btn,
+  .unblock-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-management {
+    padding: 60px 15px 15px 15px;
+  }
+
+  .search-input {
+    max-width: 100%;
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .user-id {
+    padding: 3px 6px;
+    font-size: 0.8rem;
+  }
+
+  .delete-btn,
+  .block-btn,
+  .unblock-btn {
+    padding: 5px 10px;
+    margin-right: 3px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

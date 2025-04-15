@@ -1,0 +1,280 @@
+/* Base Layout */
+.request-list {
+  padding: 100px 20px 40px 270px; /* Increased top padding for navbar, left padding for sidebar */
+  min-height: 100vh;
+  transition: padding-left 0.3s ease; /* Smooth transition when sidebar collapses */
+  background-color: #f5f7fa;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.request-list-header {
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.request-list-header h2 {
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #3498db, #2ecc71); /* Matches sidebar header gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.6rem;
+  animation: fadeIn 0.6s ease-out; /* Matches sidebar animation */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px; /* Consistent with navbar */
+}
+
+/* Search Input */
+.search-input {
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #dfe6e9;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  background: #fff; /* Consistent with table */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow like navbar */
+}
+
+.search-input:focus {
+  border-color: #3182ce; /* Matches navbar link hover */
+  box-shadow: 0 0 5px rgba(49, 130, 206, 0.3);
+  outline: none;
+}
+
+/* Table Layout */
+.request-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Matches sidebar shadow */
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.request-table:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.request-table th,
+.request-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #dfe6e9;
+}
+
+.request-table th {
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Matches sidebar gradient */
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.request-table tr {
+  transition: background 0.3s ease;
+}
+
+.request-table tr:hover {
+  background: #f1f3f5;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.approve-btn,
+.reject-btn,
+.pending-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none; /* Consistent with navbar buttons */
+  transition: all 0.3s ease;
+  text-transform: uppercase; /* Matches navbar style */
+  letter-spacing: 0.4px;
+}
+
+.approve-btn {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(46, 204, 113, 0.3);
+}
+
+.approve-btn:hover {
+  background: linear-gradient(135deg, #27ae60, #219653);
+  transform: translateY(-2px); /* Matches navbar hover effect */
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.5);
+}
+
+.reject-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3);
+}
+
+.reject-btn:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.5);
+}
+
+.pending-btn {
+  background: linear-gradient(135deg, #f1c40f, #e67e22);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(241, 196, 15, 0.3);
+}
+
+.pending-btn:hover {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(230, 126, 34, 0.5);
+}
+
+/* Reject Modal */
+.reject-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001; /* Above navbar and sidebar */
+  backdrop-filter: blur(8px); /* Matches navbar */
+}
+
+.reject-modal-content {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.reject-modal-content h3 {
+  margin-bottom: 12px;
+  color: #34495e; /* Matches sidebar */
+  font-weight: 600;
+}
+
+.reject-modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #dfe6e9;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  resize: vertical;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Consistent shadow */
+}
+
+.reject-modal-content textarea:focus {
+  border-color: #3182ce; /* Matches navbar */
+  outline: none;
+  box-shadow: 0 0 5px rgba(49, 130, 206, 0.3);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .request-list {
+    padding: 90px 30px 30px 220px; /* Adjust for narrower sidebar */
+  }
+
+  .request-table th,
+  .request-table td {
+    padding: 10px;
+  }
+
+  .search-input {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .request-list {
+    padding: 80px 20px 20px 90px; /* Adjust for collapsed sidebar */
+  }
+
+  .request-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: none; /* Allow full width on mobile */
+  }
+
+  .request-table th,
+  .request-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .approve-btn,
+  .reject-btn,
+  .pending-btn {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .request-list {
+    padding: 70px 15px 15px 80px; /* Further adjust for small screens */
+  }
+
+  .request-list-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .search-input {
+    padding: 8px;
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .request-table th,
+  .request-table td {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .approve-btn,
+  .reject-btn,
+  .pending-btn {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,124 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+}
+
+.register-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.register-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-input {
+  padding: 12px;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+.register-btn {
+  padding: 12px;
+  background: linear-gradient(135deg, #00b894, #27ae60);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #27ae60, #219653);
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.5);
+}
+
+.register-switch-text {
+  margin-top: 20px;
+  color: #636e72;
+  font-size: 0.9rem;
+}
+
+.register-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 20px;
+    max-width: 300px;
+  }
+
+  .register-heading {
+    font-size: 1.5rem;
+  }
+
+  .register-input,
+  .register-btn {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.success-message {
+  color: #ae2727;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  background: #84c984;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.error-message {
+  color: #d40000;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  background: #60be6e;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+}
